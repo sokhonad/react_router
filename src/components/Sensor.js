@@ -1,8 +1,8 @@
 import { useState ,useEffect} from 'react'
 import { Link } from 'react-router-dom';
+// import '../styles/Sensor.css';
 
-
- function CapteurList({ updateDetailCapteur,inputValue}) {
+ function Sensor({ updateDetailSensor,inputValue}) {
     const [data, setData] = useState([]);
      useEffect(()=>{
          const fetchDate=async ()=>{
@@ -11,27 +11,27 @@ import { Link } from 'react-router-dom';
               setData(json);
          };
          fetchDate();
-     });
+     },[inputValue]);
     return (
-        <ul>
+        <ul className='list_sensor'>
             {data.map((element, index) => (
-                <Link to={"/"+element.name.normalize("NFD").replace(/\p{Diacritic}/gu, "").split(" ").join("_")} key={index.toString()} onClick={
+                <li  key={index.toString()} ><Link to={"/"+element.name.normalize("NFD").replace(/\p{Diacritic}/gu, "").split(" ").join("_")} key={index.toString()} onClick={
                     () => {
                         if(element.type==="TEMPERATURE"){
-                            updateDetailCapteur([data[index]]);
+                            updateDetailSensor([data[index]]);
                         }
                         if(element.type==="DOOR"){
-                            updateDetailCapteur([data[index]]);
+                            updateDetailSensor([data[index]]);
                         }
                         if(element.type==="FAN_SPEED"){
-                            updateDetailCapteur([data[index]]);
+                            updateDetailSensor([data[index]]);
                         }
                         }                        
                 }
-                >{element.name}</Link>
+                >{element.name}</Link></li>
             ))}
         </ul>
     )
 }
 
-export default CapteurList;
+export default Sensor;

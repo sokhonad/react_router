@@ -1,19 +1,16 @@
-.lmj-banner {
+.input_comp {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);	
+
+}
+.input_url {
 	color: black;
-	text-align: right;
-	padding: 32px;
-	border-bottom: solid 3px black;
-	display: flex;
-	justify-content: flex-end;
-	flex-direction: row;
-	align-items: center;
+}
+.input {
+	width: 300px;
+	height: 30px;
+	background-color: #B4A39F;
 }
 
-.lmj-title {
-	padding-left: 32px;
-}
-
-.lmj-logo {
-	height: 45px;
-	width: 45px;
-}

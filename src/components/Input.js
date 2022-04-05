@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import '../styles/Input.css';
 
-    
-  function Input({ inputValue,setInputValue,entree}) {
+ function Input({ inputValue,setInputValue,entree}) {
 	function handleInput(e) {
 		setInputValue(e.target.value);
 	}
@@ -11,16 +10,14 @@ import { Link } from 'react-router-dom';
 	}
 
 	return (
-		<div >
-			<div>URL :</div>
-			<input
+		<div   className="input_comp">
+			<div className="input_url">URL :</div>
+			<input className="input"
 				placeholder='Source'
 				onChange={handleInput}
 				value={inputValue}
+				onBlur={setEtree}
 			/>
-			<button onClick={() => setEtree() }>
-				<Link to="/" > OK</Link>
-			</button>
 		</div>
 	);
 }

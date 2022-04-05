@@ -1,0 +1,7 @@
+.lmj-layout-inner {
+	display: flex;
+	flex-direction: row;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
