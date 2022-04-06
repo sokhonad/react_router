@@ -1,11 +1,12 @@
-// import '../styles/DetailSensor.css';
+import '../styles/DetailSensor.css';
 
 function DetailSensor({ detailSensor }) {
-    var type="";
-    var value=-1;
+    let type="";
+    let value=-1;
     detailSensor.map((element) => {
         type=element.type;
         value=element.data.value;
+        return null;
 
     });
     return (type!=="DOOR")? (
@@ -19,16 +20,16 @@ function DetailSensor({ detailSensor }) {
                     <h4  key={index.toString()}>{element.data.values[0]}</h4>
                 </div>
             ))}
-            <h2>Historique</h2>
+            <h3>Historique</h3>
             {detailSensor.map((element,index) => (
-                <div  key={index.toString()}>{element.data.values.map((element,index)=>(<li key={index.toString()}>{element}</li>))}</div>
+                <div  key={index.toString()}>{element.data.values.map((element,index)=>(<li className='li_detail' key={index.toString()}>{element}</li>))}</div>
             ))}
         </ul>
         </div>
         </div>
     ) :value===1 ? (
         <div>
-            <h2>La porte est ouvert</h2>
+            <h2 >La porte est ouvert</h2>
         </div>
 
     ):(

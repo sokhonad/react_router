@@ -1,6 +1,6 @@
 import { useState ,useEffect} from 'react'
 import { Link } from 'react-router-dom';
-// import '../styles/Sensor.css';
+import '../styles/Sensor.css';
 
  function Sensor({ updateDetailSensor,inputValue}) {
     const [data, setData] = useState([]);
@@ -13,9 +13,9 @@ import { Link } from 'react-router-dom';
          fetchDate();
      },[inputValue]);
     return (
-        <ul className='list_sensor'>
+        <ul className='sensor'>
             {data.map((element, index) => (
-                <li  key={index.toString()} ><Link to={"/"+element.name.normalize("NFD").replace(/\p{Diacritic}/gu, "").split(" ").join("_")} key={index.toString()} onClick={
+                <li className='list_sensor' key={index.toString()} ><Link to={"/"+element.name.normalize("NFD").replace(/\p{Diacritic}/gu, "").split(" ").join("_")} key={index.toString()} onClick={
                     () => {
                         if(element.type==="TEMPERATURE"){
                             updateDetailSensor([data[index]]);
@@ -26,7 +26,7 @@ import { Link } from 'react-router-dom';
                         if(element.type==="FAN_SPEED"){
                             updateDetailSensor([data[index]]);
                         }
-                        }                        
+                    }                        
                 }
                 >{element.name}</Link></li>
             ))}

@@ -1,7 +1,13 @@
 .detail_sensor {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%,-50%);	
+	color: white;
+	background-color: #5f6d66;
+	padding: 32px;
+	width: 200px;	
+    padding: 32px;
+	border-radius: 20px;
+}
+
+.li_detail {
+    list-style-type: none;
 
 }

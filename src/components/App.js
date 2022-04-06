@@ -14,7 +14,7 @@ function App() {
   return entree ?(
     <div >
         <Input inputValue={inputValue} setInputValue={setInputValue} entree={setEtree}/>
-        <div className='lmj-layout-inner ' >
+        <div className='layout-inner ' >
         <Router>
           <Sensor updateDetailSensor={updateDetailSensor}  inputValue={inputValue} />
           <Routes>
