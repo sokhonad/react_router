@@ -1,3 +1,10 @@
+# WEB APP avec React.JS
+Une web app qui se connecte à une source de données (un Web Ser-
+vice) afin de recevoir des informations sur l’état de capteurs dans
+un réseau.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
